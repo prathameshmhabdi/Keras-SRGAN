@@ -144,7 +144,7 @@ def load_test_data(directory, ext, number_of_images = 100):
         print("Please reduce number of images to %d" % len(files))
         sys.exit()
         
-    x_test_lr = lr_images(files, 4)
+    x_test_lr = lr_images(files, 1)
     x_test_lr = normalize(x_test_lr)
     
     return x_test_lr
@@ -217,7 +217,7 @@ def plot_test_generated_images_for_model(output_dir, generator, x_test_hr, x_tes
 def plot_test_generated_images(output_dir, generator, x_test_lr, figsize=(5, 5)):
     
     examples = x_test_lr.shape[0]
-    image_batch_lr = denormalize(x_test_lr)
+    image_batch_lr = x_test_lr
     gen_img = generator.predict(image_batch_lr)
     generated_image = denormalize(gen_img)
     
