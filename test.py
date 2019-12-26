@@ -1,11 +1,3 @@
-#!/usr/bin/env python
-#title           :test.py
-#description     :to test the model
-#author          :Deepak Birla
-#date            :2018/10/30
-#usage           :python test.py --options
-#python_version  :3.5.4 
-
 from keras.models import Model
 import matplotlib.pyplot as plt
 import tensorflow as tf
@@ -21,7 +13,7 @@ import argparse
 import Utils, Utils_model
 from Utils_model import VGG_LOSS
 
-image_shape = (96,96,3)
+image_shape = (160,90,3)
 
 def test_model(input_hig_res, model, number_of_images, output_dir):
     
